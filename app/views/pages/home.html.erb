@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
+<h1>My Admin</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<p class="description">
+ Vos démarches administratives, enfin simples.
+ Avec MyAdmin, vous êtes guidé·e pas à pas et vous n'oubliez plus rien.
+</p>
+
+<div class="features">
+ <div>:robot_face: IA</div>
+ <div>:white_check_mark: Checklist</div>
+ <div>:file_folder: Documents</div>
+</div>
+
+<div>
+  <%= link_to "Commencer une démarche", procedures_path, class: "start-button" %>
+</div>
