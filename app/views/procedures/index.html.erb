@@ -3,7 +3,7 @@
     <div class="col-8">
       <%= simple_form_for :search, url: create_procedure_path, method: :post do |f| %>
         <div class="search-form-control form-group mt-4">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Ask anything to your procedure assistant..."/>
+          <input class="form-control string required" type="text" name="question" id="question" placeholder="Ask anything to your procedure assistant..."/>
             <%= button_to create_procedure_path, class: "btn btn-flat" do %>
               <i class="fas fa-search"></i> Send
             <% end %>
