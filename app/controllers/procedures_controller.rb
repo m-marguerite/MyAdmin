@@ -29,7 +29,6 @@ class ProceduresController < ApplicationController
 
   private
 
-  private
   def question_context
     params[:question]
   end
