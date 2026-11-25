@@ -1,15 +1,25 @@
 class ChecklistsController < ApplicationController
+
+  def index
+    @checklists = current_user.checklists
+  end
+
+  def show
+    @checklist = Checklist.find(params[:id])
+  end
+
   def create
     procedure = Procedure.find(params[:procedure_id])
 
     @checklist = Checklist.new(
-      name: "Untitle",
-      description: "description"
+      name: procedure.name,
+      description: procedure.description
     )
-    checklist.procedure = procedure
+
+    @checklist.procedure = procedure
 
     if @checklist.save
-      redirect_to procedure_checklists_path(@checklist)
+      redirect_to checklist_path(@checklist)
     else
       render "procedures/show", status: :unprocessable_entity
     end
