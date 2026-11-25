@@ -6,7 +6,7 @@ class ProceduresController < ApplicationController
   end
 
   def index
-    @procedures = Procedure.all
+    @procedures = current_user.procedures
   end
 
   def create

@@ -1,5 +1,4 @@
 class CheckListsController < ApplicationController
-
   def create
     procedure = Procedure.find(params[:procedure_id])
 
