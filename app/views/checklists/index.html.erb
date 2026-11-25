@@ -1,0 +1,17 @@
+<h1>Mes checklists</h1>
+
+<% @checklists.each do |checklist| %>
+
+  <div class="card p-3 mb-3">
+
+    <h3><%= checklist.name %></h3>
+
+    <p><%= checklist.description %></p>
+
+    <%= link_to "Voir la checklist",
+      checklist_path(checklist),
+      class: "btn btn-primary" %>
+
+  </div>
+
+<% end %>

@@ -1,0 +1,47 @@
+<h1><%= @checklist.name %></h1>
+
+<p>
+  <%= @checklist.description %>
+</p>
+
+<hr>
+
+<h2>Étapes</h2>
+
+<% if @checklist.steps.any? %>
+
+  <ul>
+    <% @checklist.steps.each do |step| %>
+      <li>
+        <%= step.description %>
+      </li>
+    <% end %>
+  </ul>
+
+<% else %>
+
+  <p>Aucune étape enregistrée.</p>
+
+<% end %>
+
+<hr>
+
+<h2>Documents</h2>
+
+<% if @checklist.documents.any? %>
+
+  <ul>
+    <% @checklist.documents.each do |document| %>
+      <li>
+        <%= document.name %>
+      </li>
+    <% end %>
+  </ul>
+
+<% else %>
+
+  <p>Aucun document enregistré.</p>
+
+<% end %>
+
+<hr>
