@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :procedures, only: [:index, :show, :create] do
     resources :messages, only: [:create]
-       resources :check_lists, only: [:create]
+       resources :checklists, only: [:create]
   end
   post "procedures", to: "procedures#create", as: "create_procedure"
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
