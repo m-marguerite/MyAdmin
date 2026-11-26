@@ -4,7 +4,7 @@
   <div class="home-card">
 
     <div class="logo-circle">
-      <img src="../app/images/logo_myadmin.png" alt="logo MyAdmin">
+      <%= image_tag "logo_myadmin.png", alt: "logo"%>
     </div>
 
     <h1>MyAdmin</h1>
@@ -25,10 +25,46 @@
       Vous n’oubliez plus rien.
     </p>
 
-    <div class="features">
-      <div>🤖 IA</div>
-      <div>✅ Checklist</div>
-      <div>📁 Documents</div>
+    <div class="card-grid">
+      <div class="g-col-4">
+        <div class="features">
+          <div class="card-trip ">
+            <%= image_tag "icone-ia.png", alt:"logo ia", class:"logo"%>
+            <div class="card-trip-infos">
+              <div>
+                <h2>Title here</h2>
+                <p>Short description here!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="g-col-4">
+        <div class="features">
+          <div class="card-trip">
+            <%= image_tag "icone-checklist.png", alt:"logo checklist", class:"logo"%>
+            <div class="card-trip-infos">
+              <div>
+                <h2>Title here</h2>
+                <p>Short description here!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="g-col-4">
+        <div class="features">
+          <div class="card-trip">
+            <%= image_tag "icone-document.png", alt:"logo document", class: "logo"%>
+            <div class="card-trip-infos">
+              <div>
+                <h2>Title here</h2>
+                <p>Short description here!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <%= button_to "Commencer une démarche", procedures_path, class:"start-button" %>
