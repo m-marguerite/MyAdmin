@@ -25,8 +25,8 @@
   <div class="row justify-content-center">
     <div>
       <%= simple_form_for [@procedure, @message] do |f| %>
-        <%= f.input :content, label: "Pose tes questions sur ta démarche", required: true, placeholder: "Je voudrais faire une carte d'idendité" %>
-        <%= f.button :submit, "Let's go", class: 'btn btn-primary' %>
+        <%= f.input :content, label: "Pose tes questions sur ta démarche", required: true, placeholder: "Je voudrais faire une carte d'idendité..", class: 'ju' %>
+        <%= f.button :submit, "Envoyer mon message", class: 'button-round' %>
       <% end %>
     </div>
   </div>

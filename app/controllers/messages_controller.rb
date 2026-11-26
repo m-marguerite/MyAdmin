@@ -125,7 +125,7 @@ class MessagesController < ApplicationController
     {
     status: "complete",
     category: "immobilier",
-    name: "Titre de la démarche",
+    name: "Titre de la démarche. Limite à 50 caractères",
     description: "Présentation générale de la démarche, de ses conditions et de ses particularités. Limite la description à 200 caractères",
     steps: [
     {
