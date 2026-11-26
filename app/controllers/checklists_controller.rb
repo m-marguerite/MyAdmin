@@ -9,14 +9,14 @@ class ChecklistsController < ApplicationController
   end
 
   def create
-    procedure = Procedure.find(params[:procedure_id])
-
+    @procedure = Procedure.find(params[:procedure_id])
+    checklist_json
     @checklist = Checklist.new(
-      name: procedure.name,
-      description: procedure.description
+      name: @procedure.name,
+      description: @procedure.description
     )
 
-    @checklist.procedure = procedure
+    @checklist.procedure = @procedure
 
     if @checklist.save
       redirect_to checklist_path(@checklist)
