@@ -1,5 +1,7 @@
 <div class="container col-8">
-  <h1><%= @procedure.name %></h1>
+  <% unless @procedure.name == "Untitled" %>
+    <h1><%= @procedure.name %></h1>
+  <% end %>
   <br>
 
   <div id="messages">
