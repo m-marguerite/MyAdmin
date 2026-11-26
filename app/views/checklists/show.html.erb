@@ -1,47 +1,29 @@
-<h1><%= @checklist.name %></h1>
+<div class="container my-5">
+  <div class="checklist-header">
+    <h1><%= @checklist.name %></h1>
+  </div>
 
-<p>
-  <%= @checklist.description %>
-</p>
-
-<hr>
-
-<h2>Étapes</h2>
-
-<% if @checklist.steps.any? %>
-
-  <ul>
+  <div class="checklist-card">
+    <h2>Étapes</h2>
     <% @checklist.steps.each do |step| %>
-      <li>
-        <%= step.description %>
-      </li>
+      <div class="form-check checklist-item">
+        <%= check_box_tag "step_#{step.id}", 1, step.checked, class: "form-check-input" %>
+        <label class="form-check-label" for="step_<%= step.id %>">
+          <%= step.description %>
+        </label>
+      </div>
     <% end %>
-  </ul>
+  </div>
 
-<% else %>
-
-  <p>Aucune étape enregistrée.</p>
-
-<% end %>
-
-<hr>
-
-<h2>Documents</h2>
-
-<% if @checklist.documents.any? %>
-
-  <ul>
+  <div class="checklist-card">
+    <h2>Documents</h2>
     <% @checklist.documents.each do |document| %>
-      <li>
-        <%= document.name %>
-      </li>
+      <div class="form-check checklist-item">
+        <%= check_box_tag "document_#{document.id}", 1, document.checked, class: "form-check-input" %>
+        <label class="form-check-label" for="document_<%= document.id %>">
+          <%= document.name %>
+        </label>
+      </div>
     <% end %>
-  </ul>
-
-<% else %>
-
-  <p>Aucun document enregistré.</p>
-
-<% end %>
-
-<hr>
+  </div>
+</div>

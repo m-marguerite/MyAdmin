@@ -1,0 +1,29 @@
+.checklist-header {
+  background-color: $papaya-whip;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.checklist-card {
+  background-color: $papaya-whip;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.checklist-item {
+  background-color: white;
+  padding: 12px 12px 12px 40px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.checklist-item:hover {
+  background-color: $beige;
+}
+
+.form-check-input:checked {
+  background-color: $light-bronze;
+  border-color: $light-bronze;
+}

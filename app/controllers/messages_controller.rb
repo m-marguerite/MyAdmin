@@ -190,6 +190,9 @@ class MessagesController < ApplicationController
         response_finale = @ruby_llm_checklist.with_instructions(SYSTEM_PROMPT2).ask("L'utilisateur a fini de discuter,
         génère le fichier json en suivant le SYSTEM_PROMPT2 fourni")
         checklist_json = JSON.parse(response_finale.content)
+        @checklist = Checklist.create(name: checklist_json["name"], description: checklist_json["description"], procedure: @procedure)
+        @checklist.populate_task(checklist_json)
+        redirect_to checklist_path(@checklist)
       else
         Message.create(role: "assistant", content: response.content, procedure: @procedure)
         @procedure.generate_title_from_first_message
