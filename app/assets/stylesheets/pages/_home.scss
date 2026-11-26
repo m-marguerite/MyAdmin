@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .home-container {
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color:#FAEDCD;
 
   display: flex;
   justify-content: center;
@@ -9,14 +9,21 @@
 }
 
 .home-card {
-  width: 800px;
-  background: white;
+  width: 1100px;
+  height : 550px;
+  background: #FEFAE0;
   border-radius: 20px;
   padding: 50px;
 
   text-align: center;
 
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.logo-circle img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
 .logo-circle {
@@ -27,7 +34,7 @@
 
   border-radius: 40%;
 
-  background: #3f83d6;
+  background: #CCD5AE;
 
   display: flex;
   justify-content: center;
@@ -41,10 +48,17 @@
   margin-bottom: 30px;
 }
 
-.description {
-  margin-bottom: 40px;
+.description1,{
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.description2,{
+  margin-bottom: 5px;
+  text-align: center;
+}
 .features {
   display: flex;
   justify-content: space-around;
@@ -57,8 +71,8 @@
 
   padding: 15px 40px;
 
-  background: #3f83d6;
-  color: white;
+  background: #CCD5AE;
+  color: black;
 
   border-radius: 50px;
 
@@ -68,6 +82,6 @@
 }
 
 .start-button:hover {
-  color: white;
-  background: #06305a;
+  color: black;
+  background:#90af7a;
 }
