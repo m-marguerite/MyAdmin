@@ -51,7 +51,11 @@
       </div>
     </div>
 
-    <%= button_to "Commencer une démarche", procedures_path, class:"start-button" %>
+    <% if user_signed_in? %>
+      <%= button_to "Commencer une démarche", procedures_path, class:"button-round" %>
+    <% else %>
+      <%= button_to "Connectez-vous!", new_user_session_path, class:"button-round" %>
+    <% end %>
 
   </div>
 

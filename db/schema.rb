@@ -43,7 +43,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_24_113644) do
 
   create_table "procedures", force: :cascade do |t|
     t.string "name"
-    t.text "system_prompt"
+    t.text "syet voila stem_prompt"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
