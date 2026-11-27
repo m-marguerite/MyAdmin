@@ -1,0 +1,6 @@
+<%= form_with url: toggle_checklist_step_path(step.checklist, step), method: :patch, class: "form-check checklist-item", id: "step_#{step.id}" do |f| %>
+  <label class="form-check-label">
+    <%= f.check_box :checked, checked: step.checked, class: "form-check-input", onchange: "this.form.requestSubmit()" %>
+    <%= step.description %>
+  </label>
+<% end %>
