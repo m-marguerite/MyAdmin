@@ -10,7 +10,6 @@
 
 .home-card {
   width: 1100px;
-  height : 550px;
   background: #FEFAE0;
   border-radius: 20px;
   padding: 50px;
@@ -18,11 +17,15 @@
   text-align: center;
 
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+
+  h2 {
+    font-weight: 900;
+  }
 }
 
 .logo-circle {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
 
   margin: 0 auto 20px;
 
@@ -37,8 +40,8 @@
   font-size: 36px;
 
   img {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     object-fit: contain;
   }
 }
@@ -46,25 +49,7 @@
 
 .subtitle {
   color: gray;
-  margin-bottom: 30px;
-}
-
-.description1 {
-  margin-bottom: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.description2 {
-  margin-bottom: 5px;
-  text-align: center;
-}
-.features {
-  display: flex;
-  justify-content: space-around;
-
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .start-button {
@@ -89,15 +74,19 @@
 
 .card-trip {
   overflow: hidden;
-  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 280px;
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
 }
 
 .card-trip > img {
-  height: 32px;
-  width: 32px;
+  height: 45px;
+  width: 45px;
   object-fit: cover;
+  margin: 16px 0 0 16px;
+  border-radius: 50%;
 }
 
 .card-trip h2 {
@@ -109,7 +98,8 @@
 .card-trip p {
   font-size: 12px;
   opacity: .7;
-  margin: 0;
+  margin-top: 8px;
+  color: black;
 }
 
 
@@ -119,6 +109,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  text-align: left;
 }
 
 .card-trip-infos .card-trip-user {
@@ -131,4 +122,18 @@
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 64px;
+  gap: 16px
+}
+
+.greentea {
+  background-color: $tea-green;
+}
+
+.ligthbronze {
+  background-color: #ffd2a5;
+}
+
+.jungleteal {
+  background-color: #b1d69e;
 }
