@@ -1,5 +1,5 @@
 class Checklist < ApplicationRecord
-  belongs_to :procedure
+  belongs_to :procedure, dependent: :destroy
   # belongs_to :user, through: :procedures
   has_many :documents, dependent: :destroy
   has_many :steps, dependent: :destroy

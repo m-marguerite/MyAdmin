@@ -5,7 +5,12 @@
         <div class="card card-category p-3 mb-3 d-flex flex-row justify-content-between align-items-center">
           <%= image_tag "icone-checklist.png" %>
           <h3><strong><%= checklist.name %></strong></h3>
-          <%= link_to "Voir", checklist_path(checklist), class: "button-round button-round-small" %>
+          <div class="d-flex flex-column align-items-center">
+            <%= link_to "Voir", checklist_path(checklist), class: "button-round button-round-small" %>
+            <%= link_to checklist_path(checklist), class: "trashcan-icon", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cette checklist ?"} do %>
+              <i class="fa-regular fa-trash-can"></i>
+            <% end %>
+          </div>
         </div>
     <% end %>
       </div>

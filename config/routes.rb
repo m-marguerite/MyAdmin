@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :checklists, only: [:create]
   end
 
- resources :checklists, only: [:show, :index] do
+ resources :checklists, only: [:show, :index, :destroy] do
     resources :steps, only: [] do
       member { patch :toggle }
     end
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       member { patch :toggle }
     end
   end
+
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
