@@ -3,12 +3,12 @@
     <h1 class="mt-4"><%= @procedure.name %></h1>
   <% end %>
   <br>
-
+  <hr>
   <div id="messages">
     <% @procedure.messages.each do |message| %>
       <% if message.role == "user" %>
         <div class="d-flex justify-content-end mb-2">
-          <div class="bg-white px-3 pb-0 pt-3 rounded-pill">
+          <div class="user-message px-3 pb-0 pt-3 rounded-pill">
             <%= raw(render_markdown(message.content)) %>
           </div>
         </div>
@@ -21,13 +21,13 @@
       <% end %>
     <% end %>
   </div>
-
-  <div class="row justify-content-center">
-    <div>
+  <hr>
+  <div>
+    <div class="row justify-content-center">
       <%= simple_form_for [@procedure, @message] do |f| %>
-        <%= f.input :content, label: "Ta démarche en cours ", required: false, placeholder: "Donne quelques informations sur ta démarche...", label_html: { class: "label"} %>
+        <%= f.input :content, label: "Votre nouvelle demande ", required: false, placeholder: "Donnez quelques informations sur ta démarche...", label_html: { class: "label"} %>
         <%= f.button :submit, "Envoyer mon message", class: 'button-round' %>
       <% end %>
-    </div>
+    </div> 
   </div>
 </div>
