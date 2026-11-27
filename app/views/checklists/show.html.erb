@@ -6,26 +6,14 @@
   <div class="checklist-card">
     <h2>Étapes</h2>
     <% @checklist.steps.each do |step| %>
-      <div class="form-check checklist-item" data-controller="checked-button" data-action="click->checked-button#toggle">
-        <%= check_box_tag "#{step.id}", 1, step.checked,
-                          class: "form-check-input",
-                          data: { checked_button_target: "checked-button"} %>
-        <label class="form-check-label" for="<%= step.id %>">
-          <%= step.description %>
-        </label>
-      </div>
+      <%= render "steps/step", step: step %>
     <% end %>
   </div>
 
   <div class="checklist-card">
     <h2>Documents</h2>
     <% @checklist.documents.each do |document| %>
-      <div class="form-check checklist-item">
-        <%= check_box_tag "document_#{document.id}", 1, document.checked, class: "form-check-input" %>
-        <label class="form-check-label" for="document_<%= document.id %>">
-          <%= document.name %>
-        </label>
-      </div>
+      <%= render "documents/document", document: document %>
     <% end %>
   </div>
 </div>
