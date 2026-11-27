@@ -8,6 +8,12 @@ class ChecklistsController < ApplicationController
     @checklist = Checklist.find(params[:id])
   end
 
+  def destroy
+    @checklist = Checklist.find(params[:id])
+    @checklist.destroy
+    redirect_to checklists_path, status: :see_other
+  end
+
   # def create
   #   @procedure = Procedure.find(params[:procedure_id])
   #   checklist_json

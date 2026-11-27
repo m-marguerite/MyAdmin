@@ -25,6 +25,11 @@
   grid-gap: 16px;
 }
 
+.trashcan-icon {
+  padding-top: 2px;
+  color: black;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
