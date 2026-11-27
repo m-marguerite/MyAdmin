@@ -8,10 +8,16 @@ h1 {
 }
 
 #messages {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .user-message {
   background-color: $tea-green;
   color: black;
+  border-radius: 40px;
+}
+
+.assistant-message {
+  border-radius: 40px;
+  background-color: white;
 }
