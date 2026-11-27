@@ -3,34 +3,34 @@
     <h1 class="mt-4"><%= @procedure.name %></h1>
   <% end %>
   <br>
-  <hr>
   <div id="messages">
     <% @procedure.messages.each do |message| %>
       <% if message.role == "user" %>
-        <div class="d-flex justify-content-end mb-2">
-          <div class="user-message px-3 pb-0 pt-3 rounded-pill">
+        <div class="d-flex justify-content-end mb-4">
+          <div class="user-message px-3 pb-0 pt-3">
             <%= raw(render_markdown(message.content)) %>
           </div>
         </div>
       <% elsif message.role == "assistant" %>
-        <div class="d-flex justify-content-start mb-5">
-          <div class="bg-white px-3 pb-0 pt-3 rounded-pill">
+        <div class="d-flex justify-content-start mb-4">
+          <div class="assistant-message px-3 pb-0 pt-3">
             <%= raw(render_markdown(message.content)) %>
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
+
   <hr>
+
   <div>
-    <div class="row justify-content-center">
+    <div class="row">
+      <% if @procedure.name == "Untitled" %>
+        <h2 class="label">Votre nouvelle demande</h2>
+      <% end %>
       <%= simple_form_for [@procedure, @message] do |f| %>
-        <%= f.input :content,
-                    label: "Votre nouvelle demande",
-                    required: false,
-                    placeholder: "Donnez quelques informations sur ta démarche...",
-                    label_html: { class: "label" } %>
-        <%= f.submit "Envoyer mon message", class: "button-round" %>
+          <%= f.input :content, label: false, required: false, placeholder: "Donnez quelques informations sur ta démarche..."%>
+        <%= f.button :submit, "Envoyer mon message", class: 'button-round' %>
       <% end %>
     </div>
   </div>
